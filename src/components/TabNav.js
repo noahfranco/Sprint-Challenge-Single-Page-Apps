@@ -9,8 +9,9 @@ const Nav = props => (
 		exact
 		{...props}
 		activeClassName="active"
-	/>
+		/> 
 );
+
 
 const createLabel = (iconName, labelText) => <span><Icon name={iconName} />{labelText}</span>
 
