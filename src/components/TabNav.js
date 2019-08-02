@@ -9,17 +9,23 @@ const Nav = props => (
 		exact
 		{...props}
 		activeClassName="active"
-	/>
+		/> 
+
 );
+
 
 const createLabel = (iconName, labelText) => <span><Icon name={iconName} />{labelText}</span>
 
-const welcomeLabel = createLabel("home", "Home Page")
-const characterLabel = createLabel("users", "Characters")
+const welcomeLabel = createLabel("home", "Home Page");
+const characterLabel = createLabel("users", "Characters");
+const locationsLabel = createLabel("map outline", "locations");
+const episodesLable = createLabel("map outline", "episodes")
 
 const panes = [
   { menuItem: <Menu.Item key='home' as={Nav} to={`/`} content={welcomeLabel} /> },
-  { menuItem: <Menu.Item key='characters' as={Nav} to={`/characters`} content={characterLabel} /> }
+  { menuItem: <Menu.Item key='characters' as={Nav} to={`/characters`} content={characterLabel} /> },
+  { menuItem: <Menu.Item key="location" as={Nav} to={`/locations`} content={locationsLabel} /> },
+  { menuItem: <Menu.Item key="episodes" as={Nav} to={`/episodes`} content={episodesLable} /> }
 ]
 
 const TabNav = () => <Tab panes={panes} renderActiveOnly={false} />
